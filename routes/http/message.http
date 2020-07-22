@@ -1,0 +1,7 @@
+
+POST http://localhost:8000/messages/user/9405ffc5-7419-4796-8dd8-fa99fbee8339
+Content-Type: application/json
+
+{
+    "content": "test content"
+}

@@ -21,10 +21,10 @@ User.hasMany(Like, {
   foreignKey: { allowNull: false },
   as: "Like",
 });
-User.hasMany(Conversation, {
-  foreignKey: { allowNull: false },
-  as: "Conversation",
-});
+// User.hasMany(Conversation, {
+//   foreignKey: { allowNull: false },
+//   as: "Conversation",
+// });
 Post.belongsTo(User, {
   foreignKey: { allowNull: false },
   onDelete: "CASCADE",
@@ -44,8 +44,8 @@ Comment.belongsTo(User, {
   foreignKey: { allowNull: false },
   onDelete: "CASCADE",
 });
-
 Message.belongsTo(User, {
   foreignKey: { allowNull: false },
   onDelete: "CASCADE",
 });
+// Conversation.belongsToMany(User, { through: Message });
