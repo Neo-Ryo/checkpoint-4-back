@@ -1,11 +1,11 @@
-const express = require("express");
+// const express = require("express");
 
-const conversation = express.Router();
+// const conversation = express.Router();
 
-const regExIntChck = require("../middleware/regexCheck");
-const { uuidv4RegExp } = require("../middleware/regexCheck");
+// const regExIntChck = require("../middleware/regexCheck");
+// const { uuidv4RegExp } = require("../middleware/regexCheck");
 
-const Conversation = require("../model/Conversation.model");
+// const Conversation = require("../model/Conversation.model");
 
 // conversation.get("/", regExIntChck(uuidv4RegExp), async (req, res) => {
 //   try {
@@ -54,4 +54,4 @@ const Conversation = require("../model/Conversation.model");
 //   } catch (error) {}
 // });
 
-module.exports = conversation;
+// module.exports = conversation;
