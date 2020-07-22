@@ -1,7 +1,9 @@
 
-POST http://localhost:8000/messages/user/9405ffc5-7419-4796-8dd8-fa99fbee8339
+POST http://localhost:8000/messages
 Content-Type: application/json
 
 {
+    "UserUuid": "89b73625-50df-414f-b3a5-abd84bf2f357",
+    "RecieverUuid": "9405ffc5-7419-4796-8dd8-fa99fbee8339",
     "content": "test content"
 }
