@@ -1,0 +1,18 @@
+GET http://localhost:8000/likes/880cfe95-91f7-45c9-b05c-17df01b10d43
+
+###
+
+POST http://localhost:8000/likes/user/9405ffc5-7419-4796-8dd8-fa99fbee8339/post/880cfe95-91f7-45c9-b05c-17df01b10d43
+
+###
+
+POST http://localhost:8000/likes/user/89b73625-50df-414f-b3a5-abd84bf2f357/post/880cfe95-91f7-45c9-b05c-17df01b10d43
+
+###
+
+DELETE http://localhost:8000/likes/e4cdde21-a892-4357-b897-92715cab45b6
+Content-Type: application/json
+
+{
+    "UserUuid": "9405ffc5-7419-4796-8dd8-fa99fbee8339"
+}

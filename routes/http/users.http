@@ -10,9 +10,9 @@ POST http://localhost:8000/users
 Content-Type: application/json
 
 {
-    "email": "test@gmail.com",
+    "email": "test2@gmail.com",
     "password": "toto",
-    "pseudo": "Ryo",
+    "pseudo": "Ryo2",
     "picture": ""
 }
 

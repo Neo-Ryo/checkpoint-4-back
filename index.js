@@ -8,6 +8,7 @@ const post = require("./routes/post.route");
 const message = require("./routes/message.route");
 const like = require("./routes/like.route");
 const comment = require("./routes/comment.route");
+const conversation = require("./model/Conversation.model");
 
 const app = express();
 const PORT = 8000;
@@ -17,9 +18,10 @@ app.use(express.json());
 
 app.use("/users", user);
 app.use("/posts", post);
-// app.use("/likes", like);
-// app.use("/messages", message);
-// app.use("/comments", comment);
+app.use("/likes", like);
+app.use("/messages", message);
+app.use("/comments", comment);
+app.use("/conversations", conversation);
 
 app.get("/", function (req, res) {
   res.send("Welcome on BUSHIDO API");

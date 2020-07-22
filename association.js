@@ -3,6 +3,7 @@ const Post = require("./model/Post.model");
 const Message = require("./model/Message.model");
 const Like = require("./model/Like.model");
 const Comment = require("./model/Comment.model");
+const Conversation = require("./model/Conversation.model");
 
 User.hasMany(Post, {
   foreignKey: { allowNull: false },
@@ -19,6 +20,10 @@ User.hasMany(Comment, {
 User.hasMany(Like, {
   foreignKey: { allowNull: false },
   as: "Like",
+});
+User.hasMany(Conversation, {
+  foreignKey: { allowNull: false },
+  as: "Conversation",
 });
 Post.belongsTo(User, {
   foreignKey: { allowNull: false },
