@@ -1,0 +1,27 @@
+GET http://localhost:8000/posts
+
+###
+
+GET http://localhost:8000/posts/880cfe95-91f7-45c9-b05c-17df01b10d43
+
+###
+
+POST http://localhost:8000/posts/9405ffc5-7419-4796-8dd8-fa99fbee8339
+Content-Type: application/json
+
+{
+    "title": "Titre test",
+    "text": "text test",
+    "picture": ""
+}
+
+###
+
+PUT http://localhost:8000/posts/880cfe95-91f7-45c9-b05c-17df01b10d43/user/9405ffc5-7419-4796-8dd8-fa99fbee8339
+Content-Type: application/json
+
+{
+    "title": "Titre test 3",
+    "text": "text test 3",
+    "picture": ""
+}

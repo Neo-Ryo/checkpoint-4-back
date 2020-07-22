@@ -1,0 +1,27 @@
+GET http://localhost:8000/users
+
+###
+
+GET http://localhost:8000/users/9405ffc5-7419-4796-8dd8-fa99fbee8339
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "toto",
+    "pseudo": "Ryo",
+    "picture": ""
+}
+
+###
+
+POST http://localhost:8000/users/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "toto"
+}
