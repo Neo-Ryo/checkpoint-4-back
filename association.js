@@ -7,36 +7,26 @@ const Conversation = require("./model/Conversation.model");
 
 User.hasMany(Post, {
   foreignKey: { allowNull: false },
-  as: "Post",
 });
+Post.belongsTo(User);
+
 User.hasMany(Comment, {
   foreignKey: { allowNull: false },
-  as: "Comment",
 });
+Comment.belongsTo(User);
+
 User.hasMany(Like, {
   foreignKey: { allowNull: false },
-  as: "Like",
 });
+Like.belongsTo(User);
 
-Post.belongsTo(User, {
-  foreignKey: { allowNull: false },
-  onDelete: "CASCADE",
-});
 Post.hasMany(Like, {
   foreignKey: { allowNull: false },
-  as: "Like",
 });
-Like.belongsTo(User, { foreignKey: { allowNull: false }, as: "User" });
-Like.belongsTo(Post, { foreignKey: { allowNull: false }, as: "Post" });
-Post.hasMany(Comment, { foreignKey: { allowNull: false }, as: "Comment" });
-Comment.belongsTo(Post, {
-  foreignKey: { allowNull: false },
-  onDelete: "CASCADE",
-});
-Comment.belongsTo(User, {
-  foreignKey: { allowNull: false },
-  onDelete: "CASCADE",
-});
+Like.belongsTo(Post, { foreignKey: { allowNull: false } });
+
+Post.hasMany(Comment, { foreignKey: { allowNull: false } });
+Comment.belongsTo(Post);
 
 User.belongsToMany(Conversation, { through: Message }, { onDelete: "CASCADE" });
 Conversation.belongsToMany(User, { through: Message });

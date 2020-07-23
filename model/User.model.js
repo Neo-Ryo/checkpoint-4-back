@@ -23,7 +23,7 @@ const User = sequelizeInstance.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    picture: {
+    avatar: {
       type: Sequelize.STRING(250),
       allowNull: false,
     },

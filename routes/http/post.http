@@ -17,11 +17,4 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8000/posts/880cfe95-91f7-45c9-b05c-17df01b10d43/user/9405ffc5-7419-4796-8dd8-fa99fbee8339
-Content-Type: application/json
-
-{
-    "title": "Titre test 3",
-    "text": "text test 3",
-    "picture": ""
-}
+DELETE http://localhost:8000/posts/dd2209a1-e810-4a01-b4d3-55b9fbae379c

@@ -1,4 +1,7 @@
 const express = require("express");
+const Like = require("../model/Like.model");
+const User = require("../model/User.model");
+const Comment = require("../model/Comment.model");
 
 const post = express.Router();
 
@@ -9,7 +12,17 @@ const Post = require("../model/Post.model");
 
 post.get("/", async (req, res) => {
   try {
-    const post = await Post.findAll();
+    const post = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: { exclude: ["password"] },
+        },
+        {
+          model: Comment,
+        },
+      ],
+    });
     res.status(200).json(post);
   } catch (error) {
     res.status(400).json(error);
@@ -19,7 +32,17 @@ post.get("/", async (req, res) => {
 post.get("/:uuid", regExIntChck(uuidv4RegExp), async (req, res) => {
   const { uuid } = req.params;
   try {
-    const post = await Post.findByPk(uuid);
+    const post = await Post.findByPk(uuid, {
+      include: [
+        {
+          model: User,
+          attributes: { exclude: ["password"] },
+        },
+        {
+          model: Comment,
+        },
+      ],
+    });
     res.status(200).json(post);
   } catch (error) {
     res.status(404).json(error);
@@ -42,22 +65,14 @@ post.post("/:UserUuid", async (req, res) => {
   }
 });
 
-post.put(
-  "/:uuid/user/:UserUuid",
-  regExIntChck(uuidv4RegExp),
-  async (req, res) => {
-    const { uuid, UserUuid } = req.params;
-    const { title, text, picture } = req.body;
-    try {
-      const post = await Post.update(
-        { title, text, picture },
-        { where: [{ uuid }, { UserUuid }] }
-      );
-      res.status(200).json(post);
-    } catch (error) {
-      res.status(404).json(error);
-    }
+post.delete("/:uuid", regExIntChck(uuidv4RegExp), async (req, res) => {
+  const { uuid } = req.params;
+  try {
+    const post = await Post.destroy({ where: { uuid } });
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(404).json(error);
   }
-);
+});
 
 module.exports = post;

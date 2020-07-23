@@ -1,9 +1,16 @@
+GET http://localhost:8000/messages
 
-POST http://localhost:8000/messages
+###
+
+GET http://localhost:8000/messages/ff0d7b9c-326d-453a-bef5-11c0614364e8
+
+###
+
+POST http://localhost:8000/messages/ff0d7b9c-326d-453a-bef5-11c0614364e8
 Content-Type: application/json
 
 {
-    "UserUuid": "89b73625-50df-414f-b3a5-abd84bf2f357",
-    "RecieverUuid": "9405ffc5-7419-4796-8dd8-fa99fbee8339",
-    "content": "test content"
+    "UserUuid": "9405ffc5-7419-4796-8dd8-fa99fbee8339",
+    "RecieverUuid": "89b73625-50df-414f-b3a5-abd84bf2f357",
+    "content": "Ciao!!!"
 }

@@ -29,13 +29,13 @@ user.get("/:uuid", regExIntChck(uuidv4RegExp), async (req, res) => {
 });
 
 user.post("/", async (req, res) => {
-  const { email, pseudo, password, picture } = req.body;
+  const { email, pseudo, password, avatar } = req.body;
   try {
     const user = await User.create({
       email,
       pseudo,
       password,
-      picture,
+      avatar,
     });
     res.status(201).json(user);
   } catch (error) {}

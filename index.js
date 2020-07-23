@@ -5,7 +5,7 @@ const sequelize = require("./sequelize");
 require("./association");
 const user = require("./routes/user.route");
 const post = require("./routes/post.route");
-const conversation = require("./routes/conversation.route");
+// const conversation = require("./routes/conversation.route");
 const like = require("./routes/like.route");
 const comment = require("./routes/comment.route");
 
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use("/users", user);
 app.use("/posts", post);
 app.use("/likes", like);
-app.use("/conversation", conversation);
+// app.use("/conversation", conversation);
 app.use("/comments", comment);
 
 app.get("/", function (req, res) {
@@ -27,7 +27,7 @@ app.get("/", function (req, res) {
 
 async function main() {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ alter: true });
     await sequelize.authenticate();
     console.log("You've reached bushido DB !");
     app.listen(PORT, (err) => {
