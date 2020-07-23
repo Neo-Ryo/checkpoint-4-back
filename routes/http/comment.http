@@ -1,10 +1,10 @@
-GET http://localhost:8000/comments/880cfe95-91f7-45c9-b05c-17df01b10d43
+GET http://localhost:8000/comments/0a6a5bf0-0953-4c5d-9f24-c04f83b8c1b2
 
 ###
 
-POST http://localhost:8000/comments/880cfe95-91f7-45c9-b05c-17df01b10d43/user/89b73625-50df-414f-b3a5-abd84bf2f357
+POST http://localhost:8000/comments/0a6a5bf0-0953-4c5d-9f24-c04f83b8c1b2/user/9973248f-c5ce-4765-8937-6f1152524644
 Content-Type: application/json
 
 {
-    "content": "je suis un fucking commentaire"
+    "content": "Woow genial !!!"
 }

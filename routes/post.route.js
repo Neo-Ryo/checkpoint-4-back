@@ -20,6 +20,11 @@ post.get("/", async (req, res) => {
         },
         {
           model: Comment,
+          include: [
+            {
+              model: User,
+            },
+          ],
         },
       ],
     });
